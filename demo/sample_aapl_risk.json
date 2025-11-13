@@ -1,0 +1,10 @@
+{
+  "symbol": "AAPL",
+  "jafar_risk": 72,
+  "macro_regime": "High Inflation + Tightening",
+  "recession_prob": 0.68,
+  "signals": [
+    {"source": "X", "event": "CEO lawsuit", "weight": 25},
+    {"source": "Macro", "event": "Yield curve inverted", "weight": 18}
+  ]
+}

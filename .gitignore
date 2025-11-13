@@ -1,0 +1,51 @@
+# Python / Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Data (Docker volumes)
+neo4j_data/
+postgres_data/
+redis_data/
+
+# Build / Dist
+build/
+dist/
+*.egg-info/
+
+# Prefect
+.prefect/
+prefect.db
+
+# Logs
+*.log
+
+# Demo (optional — keep if you want)
+# demo/demo.gif

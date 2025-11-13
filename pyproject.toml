@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "jafar"
+version = "0.1.0"
+description = "OSINT + Macro Risk Engine"
+authors = ["Your Name <your.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+# Dependencies from requirements.txt
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+addopts = "-v"
