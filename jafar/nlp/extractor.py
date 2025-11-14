@@ -18,7 +18,6 @@ async def grok_sentiment_event(text: str) -> Dict:
         logger.error("GROK_API_KEY not set")
         return {"sentiment": 0.0, "events": []}
     url = "https://api.x.ai/grok"  # Hypothetical Grok API endpoint
-    headers = {"Authorization": f"Bearer {config.GROK_API_KEY}"}
     payload = {
         "prompt": f"Analyze sentiment and extract events: {text}",
         "model": "grok-4"

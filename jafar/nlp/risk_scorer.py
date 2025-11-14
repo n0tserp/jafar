@@ -4,6 +4,8 @@ import structlog
 
 logger = structlog.get_logger()
 
+from typing import List, Dict
+
 def compute_jafar_risk(osint_signals: List[Dict], macro_signals: Dict) -> Dict:
     # OSINT 60%
     osint_score = np.mean([s["weight"] for s in osint_signals]) * 0.6 if osint_signals else 0.0

@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase, RoutingControl
-from typing import None
+from typing import Optional
 import structlog
 from jafar.config import config
 
