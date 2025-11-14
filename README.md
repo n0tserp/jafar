@@ -1,3 +1,4 @@
+cat > README.md << 'EOF'
 # Jafar — Just Analyzing Financial Asset Risk
 
 > **An open-source alternative to BlackRock’s Aladdin**  
@@ -13,7 +14,7 @@
 
 | Feature | Description |
 |-------|-----------|
-| **OSINT Ingestion** | SEC filings, X posts, news, Reddit, earnings call PDFs |
+| **OSINT Ingestion** | SEC filings, X posts, news, Reddit, **earnings call transcripts (Quartr)** |
 | **Macro Regime Detection** | FRED CPI, unemployment, VIX, yield curve |
 | **Knowledge Graph** | Neo4j: `Company → Officer → Event → Risk` |
 | **Jafar Risk Score** | `60% OSINT + 40% Macro` |
@@ -30,6 +31,9 @@ git clone https://github.com/n0tserp/jafar.git
 cd jafar
 ./scripts/setup.sh
 docker-compose up --build
+
+Dashboard: http://localhost:8501
+API: http://localhost:8000/risk/AAPL
 
 Example: AAPL Risk
 {
@@ -52,21 +56,15 @@ UI: Streamlit
 Data: FRED, SEC-API, NewsAPI, X API
 Deploy: Docker + Render.com (free tier)
 
-
 Roadmap
 
  v1.0: Core ingestion + risk scoring
  v2.0: Grok 4 agent + portfolio stress tests
  Future: Slack alerts, 500+ equities
 
- ---
+ Contributing
+Pull requests welcome! See CONTRIBUTING.md for details.
 
-## Contributing
-
-Pull requests welcome! See [`CONTRIBUTING.md`](CONTRIBUTING.md) for details.
-
----
-
-## License
-
-MIT © [n0tserp](https://github.com/n0tserp) — see [`LICENSE`](LICENSE)
+License
+MIT © n0tserp — see LICENSE
+EOF

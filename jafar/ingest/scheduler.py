@@ -1,13 +1,12 @@
-from jafar.config import config
+cat > jafar/ingest/scheduler.py << 'EOF'
 from jafar.config import config
 from prefect import flow, task
 from prefect.tasks import task_input_hash
-from prefect.deployments import Deployment
 from datetime import timedelta
 import structlog
-
 from .osint import sec, x, news, reddit, pdf_earnings
 from .macro import fred, bls, vix, truflation
+from .quartr import get_quartr_transcripts  # NEW: Quartr
 
 logger = structlog.get_logger()
 
@@ -20,7 +19,20 @@ def ingest_osint_task(symbol: str):
     reddit_posts = reddit.fetch_reddit_posts("wallstreetbets")  # Example subreddit
     # For PDFs, assume urls from filings
     pdf_text = pdf_earnings.extract_earnings_text("example_url.pdf") if sec_filings else ""
-    return {"sec": sec_filings, "x": x_posts, "news": news_articles, "reddit": reddit_posts, "pdf": pdf_text}
+
+    # NEW: Quartr earnings transcripts
+    quartr_signals = []
+    if config.ENABLE_QUARTR:
+        quartr_signals = get_quartr_transcripts(symbol)
+
+    return {
+        "sec": sec_filings,
+        "x": x_posts,
+        "news": news_articles,
+        "reddit": reddit_posts,
+        "pdf": pdf_text,
+        "quartr": quartr_signals  # NEW
+    }
 
 @task(cache_key_fn=task_input_hash, cache_expiration=timedelta(days=1), retries=3)
 def ingest_macro_task():
@@ -40,3 +52,4 @@ def ingest_osint_flow(symbols: list[str]):
 @flow
 def ingest_macro_flow():
     ingest_macro_task()
+EOF
