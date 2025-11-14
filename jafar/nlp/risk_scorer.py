@@ -1,10 +1,10 @@
+from typing import List, Dict
 from typing import Dict, float
 import numpy as np
 import structlog
 
 logger = structlog.get_logger()
 
-from typing import List, Dict
 
 def compute_jafar_risk(osint_signals: List[Dict], macro_signals: Dict) -> Dict:
     # OSINT 60%
