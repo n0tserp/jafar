@@ -12,7 +12,7 @@ def get_quartr_transcripts(symbol: str, limit: int = 4) -> List[Dict]:
         logger.info("QUARTR_API_KEY not set — skipping Quartr")
         return []
 
-    url = f"https://api.quartr.com/v1/transcripts"
+    url = "https://api.quartr.com/v1/transcripts"
     headers = {"Authorization": f"Bearer {QUARTR_API_KEY}"}
     params = {"ticker": symbol, "limit": limit}
 
@@ -26,7 +26,7 @@ def get_quartr_transcripts(symbol: str, limit: int = 4) -> List[Dict]:
                 "source": "Quartr",
                 "event": f"Earnings Call Q{item['quarter']} {item['year']}",
                 "text": item["transcript"],
-                "weight": 30,  # High signal
+                "weight": 30,
                 "date": item["date"]
             })
         logger.info(f"Quartr: {len(transcripts)} transcripts for {symbol}")
