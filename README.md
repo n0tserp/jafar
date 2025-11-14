@@ -1,4 +1,4 @@
-cat > README.md << 'EOF'
+README.md 
 # Jafar — Just Analyzing Financial Asset Risk
 
 > **An open-source alternative to BlackRock’s Aladdin**  
@@ -67,4 +67,3 @@ Pull requests welcome! See CONTRIBUTING.md for details.
 
 License
 MIT © n0tserp — see LICENSE
-EOF
