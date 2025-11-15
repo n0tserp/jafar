@@ -28,8 +28,8 @@ Jafar is a production-grade risk engine that:
 - Optional: enable with `.env`
 
 
-QUARTR_API_KEY=your_key
-ENABLE_QUARTR=true
+- QUARTR_API_KEY=your_key
+- ENABLE_QUARTR=true
 
 ---
 
@@ -53,53 +53,24 @@ ENABLE_QUARTR=true
 
 ## Quick Start
 
-git clone https://github.com/n0tserp/jafar.git
-cd jafar
-./scripts/setup.sh
-docker-compose up --build
+- git clone https://github.com/n0tserp/jafar.git
+- cd jafar
+- ./scripts/setup.sh
+- docker-compose up --build
 
 - Dashboard: http://localhost:8501
 - API: http://localhost:8000/risk/AAPL
 
 ---
 
-## EXAMPLE: AAPL Risk
-
-{
-  "symbol": "AAPL",
-  "jafar_risk": 72,
-  "macro_regime": "High Inflation + Tightening",
-  "recession_prob": 0.68,
-  "signals": [
-    {
-      "source": "Quartr",
-      "event": "Earnings Call Q4 2025",
-      "weight": 30
-    },
-    {
-      "source": "X",
-      "event": "CEO lawsuit",
-      "weight": 25
-    }
-  ]
-}
-
----
-
 ## Tech Stack
 
-- Backend
-  "FastAPI, Prefect 2"
-- NLP
-  spaCy + Grok 4 (free tier)
-- Graph
-  Neo4j
-- UI
-  Streamlit
-- Data
-  "FRED, SEC-API, NewsAPI, X API, Quartr"
-- Deploy
-  Docker + Render.com (free tier)
+- Backend, "FastAPI, Prefect 2"
+- NLP, "spaCy + Grok 4 (free tier)"
+- Graph, "Neo4j"
+- UI, "Streamlit"
+- Data, "FRED, SEC-API, NewsAPI, X API, Quartr"
+- Deploy, "Docker + Render.com (free tier)"
 
 ---
 
@@ -121,3 +92,27 @@ Pull requests welcome! See CONTRIBUTING.md for setup.
 ## License
 
 MIT © n0tserp — see LICENSE
+
+---
+
+## Example: AAPL Risk Score
+
+```json
+{
+  "symbol": "AAPL",
+  "jafar_risk": 72,
+  "macro_regime": "High Inflation + Tightening",
+  "recession_prob": 0.68,
+  "signals": [
+    {
+      "source": "Quartr",
+      "event": "Earnings Call Q4 2025",
+      "weight": 30
+    },
+    {
+      "source": "X",
+      "event": "CEO lawsuit",
+      "weight": 25
+    }
+  ]
+}
