@@ -1,7 +1,7 @@
-README.md 
 ![CI](https://github.com/n0tserp/jafar/actions/workflows/ci.yml/badge.svg)
-> **NOT FINANCIAL ADVICE** — Jafar is an **educational open-source tool**. Use at your own risk. No warranties.
 ![Deploy](https://img.shields.io/badge/Deploy-Render.com-blue)
+
+> **NOT FINANCIAL ADVICE** — Jafar is an **educational open-source tool**. Use at your own risk. No warranties.
 
 # Jafar — Just Analyzing Financial Asset Risk
 
@@ -24,17 +24,24 @@ CEOs say the quiet part out loud — Jafar listens.
 QUARTR_API_KEY=your_key
 ENABLE_QUARTR=true
 
-## Quick Start
+Feature,Description
+OSINT Ingestion,"SEC filings, X posts, news, Reddit, Quartr earnings calls"
+Macro Regime Detection,"FRED CPI, unemployment, VIX, yield curve"
+Knowledge Graph,Neo4j: Company → Officer → Event → Risk
+Jafar Risk Score,60% OSINT + 40% Macro
+API + Dashboard,FastAPI + Streamlit
+Orchestration,Prefect 2 (15-min flows)
+Docker-First,"PostgreSQL, Neo4j, Redis, Prefect"
 
- ```bash
- git clone https://github.com/n0tserp/jafar.git
- cd jafar
- ./scripts/setup.sh
- docker-compose up --build
- **Dashboard**: [`http://localhost:8501`](http://localhost:8501)  
- **API**: [`http://localhost:8000/risk/AAPL`](http://localhost:8000/risk/AAPL)
+Quick Start
+git clone https://github.com/n0tserp/jafar.git
+cd jafar
+./scripts/setup.sh
+docker-compose up --build
+Dashboard: http://localhost:8501
+API: http://localhost:8000/risk/AAPL
 
-## Example: AAPL Risk
+Example: AAPL Risk
 {
   "symbol": "AAPL",
   "jafar_risk": 72,
@@ -46,24 +53,24 @@ ENABLE_QUARTR=true
   ]
 }
 
-## Tech Stack
+Tech Stack
 
- Backend: FastAPI, Prefect 2
- NLP: spaCy + Grok 4 (free tier)
- Graph: Neo4j
- UI: Streamlit
- Data: FRED, SEC-API, NewsAPI, X API, Quartr
- Deploy: Docker + Render.com (free tier)
+Backend: FastAPI, Prefect 2
+NLP: spaCy + Grok 4 (free tier)
+Graph: Neo4j
+UI: Streamlit
+Data: FRED, SEC-API, NewsAPI, X API, Quartr
+Deploy: Docker + Render.com (free tier)
 
-## Roadmap
+Roadmap
 
- v1.0: Core ingestion + risk scoring
- v1.1: Quartr earnings call transcripts
- v2.0: Grok 4 agent + portfolio stress tests
- Future: Slack alerts, 500+ equities
+v1.0: Core ingestion + risk scoring
+v1.1: Quartr earnings call transcripts
+v2.0: Grok 4 agent + portfolio stress tests
+Future: Slack alerts, 500+ equities
 
-## Contributing
- Pull requests welcome! See CONTRIBUTING.md for details.
+Contributing
+Pull requests welcome! See CONTRIBUTING.md for details.
 
-## License
- MIT © n0tserp — see LICENSE 
+License
+MIT © n0tserp — see LICENSE
