@@ -23,6 +23,7 @@ CEOs say the quiet part out loud — Jafar listens.
 ```env
 QUARTR_API_KEY=your_key
 ENABLE_QUARTR=true
+---
 
 ## Features
 
@@ -36,6 +37,8 @@ ENABLE_QUARTR=true
 | **Orchestration**      | Prefect 2 (15-min flows)                         |
 | **Docker-First**       | PostgreSQL, Neo4j, Redis, Prefect                |
 
+---
+
 ## Quick Start
 git clone https://github.com/n0tserp/jafar.git
 cd jafar
@@ -43,6 +46,8 @@ cd jafar
 docker-compose up --build
 Dashboard: http://localhost:8501
 API: http://localhost:8000/risk/AAPL
+
+---
 
 ## Example: AAPL Risk
 {
@@ -56,6 +61,8 @@ API: http://localhost:8000/risk/AAPL
   ]
 }
 
+---
+
 ## Tech Stack
 
 - Backend: FastAPI, Prefect 2
@@ -65,14 +72,20 @@ API: http://localhost:8000/risk/AAPL
 - Data: FRED, SEC-API, NewsAPI, X API, Quartr
 - Deploy: Docker + Render.com (free tier)
 
+---
+
 ## Roadmap
 - [x] v1.0: Core ingestion + risk scoring
 - [x] v1.1: Quartr earnings call transcripts
 - [ ] v2.0: Grok 4 agent + portfolio stress tests
 - [ ] Future: Slack alerts, 500+ equities
 
+---
+
 ## Contributing
 Pull requests welcome! See CONTRIBUTING.md for details.
+
+---
 
 ## License
 MIT © n0tserp — see LICENSE
