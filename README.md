@@ -1,5 +1,6 @@
 README.md 
 ![CI](https://github.com/n0tserp/jafar/actions/workflows/ci.yml/badge.svg)
+> **NOT FINANCIAL ADVICE** — Jafar is an **educational open-source tool**. Use at your own risk. No warranties.
 ![Deploy](https://img.shields.io/badge/Deploy-Render.com-blue)
 
 # Jafar — Just Analyzing Financial Asset Risk
