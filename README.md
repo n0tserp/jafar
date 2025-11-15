@@ -71,8 +71,16 @@ docker-compose up --build
   "macro_regime": "High Inflation + Tightening",
   "recession_prob": 0.68,
   "signals": [
-    {"source": "Quartr", "event": "Earnings Call Q4 2025", "weight": 30},
-    {"source": "X", "event": "CEO lawsuit", "weight": 25}
+    {
+      "source": "Quartr",
+      "event": "Earnings Call Q4 2025",
+      "weight": 30
+    },
+    {
+      "source": "X",
+      "event": "CEO lawsuit",
+      "weight": 25
+    }
   ]
 }
 
@@ -97,10 +105,10 @@ docker-compose up --build
 
 ## Roadmap
 
-[x] v1.0: Core ingestion + risk scoring
-[x] v1.1: Quartr earnings call transcripts
-[ ] v2.0: Grok 4 agent + portfolio stress tests
-[ ] Future: Slack alerts, 500+ equities
+- [x] v1.0: Core ingestion + risk scoring
+- [x] v1.1: Quartr earnings call transcripts
+- [ ] v2.0: Grok 4 agent + portfolio stress tests
+- [ ] Future: Slack alerts, 500+ equities
 
 ---
 
